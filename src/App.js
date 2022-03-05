@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Explore from "./pages/Explore";
 import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -13,6 +15,9 @@ function App() {
           <Route path="/" exact element={<Explore />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/offer" element={<Offers />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/logout" element={<SignUp />} />
         </Routes>
         <Navbar />
       </Router>
