@@ -63,12 +63,20 @@ function Profile() {
         </div>
         <div className="profileCard">
           <form>
-            <input
+            {/* <input
               type="text"
               id="name"
               className={!changeDetails ? "profileName" : "profileNameActive"}
               disabled={!changeDetails}
               value={name}
+              onChange={onChange}
+            />{" "} */}
+            <input
+              type="text"
+              id="email"
+              className={!changeDetails ? "profileEmail" : "profileEmailActive"}
+              disabled={!changeDetails}
+              value={email}
               onChange={onChange}
             />
           </form>
