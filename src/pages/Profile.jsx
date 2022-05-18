@@ -2,16 +2,19 @@
 
 import { useState, useEffect } from "react";
 import { getAuth, updateProfile } from "firebase/auth";
-import { updateDoc,
+import {
+  updateDoc,
   doc,
   collection,
   getDocs,
   query,
   where,
   orderBy,
-  deleteDoc, } from "firebase/firestore";
+  deleteDoc,
+} from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate, Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Profile() {
   const auth = getAuth();
@@ -36,8 +39,25 @@ function Profile() {
   };
   // return user ? <h1>{user.displayName}</h1> : "Not Logged In";
 
-  const onSubmit = () => {
-    console.log("123");
+  const onSubmit = async () => {
+    // console.log("123");
+    try {
+      // Update display name in fb
+      if (auth.currentUser.displayName !== name) {
+        await updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+
+        // update in firestore
+        const userRef = doc(db, "users", auth.currentUser.uid);
+        await updateDoc(userRef, {
+          name,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Could not update profile details");
+    }
   };
 
   const onChange = (e) => {
@@ -70,14 +90,15 @@ function Profile() {
         </div>
         <div className="profileCard">
           <form>
-            {/* <input
+            <input
               type="text"
               id="name"
               className={!changeDetails ? "profileName" : "profileNameActive"}
               disabled={!changeDetails}
               value={name}
               onChange={onChange}
-            />{" "} */}
+            />
+
             <input
               type="text"
               id="email"
