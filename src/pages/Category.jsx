@@ -10,7 +10,6 @@ import {
   orderBy,
   limit,
   startAfter,
-  QuerySnapshot,
 } from "firebase/firestore";
 
 import { db } from "../firebase.config";
@@ -32,7 +31,7 @@ function Category() {
         const q = query(
           listingsRef,
           where("type", "==", params.categoryName),
-          // orderBy("name", "desc"), -- bug
+          orderBy("timestamp", "desc"), //-- bug
           limit(10)
         );
 
