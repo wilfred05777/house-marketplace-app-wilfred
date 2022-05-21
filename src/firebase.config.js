@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -38,3 +39,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+
+// const colRef = collection(db, "listings");
+// getDocs(colRef).then((snapshot) => {
+//   console.log(snapshot.docs);
+// });
+
+// async function getListings(db) {
+//   const listingsCol = collection(db, "listings");
+//   const listingSnapshot = await getDocs(listingsCol);
+//   const listingList = listingSnapshot.docs.map((doc) => doc.data());
+//   return listingList;
+//   // console.log(listingList);
+//   // console.log(getListings());
+// }
+// console.log(getListings());
+
+// "firebase": "^9.4.1", brad's version
