@@ -47,7 +47,7 @@ function Navbar() {
                   : "navListItemName"
               }
             >
-              Offer
+              Offers
             </p>
             {/* <p>Offer</p> */}
           </li>
