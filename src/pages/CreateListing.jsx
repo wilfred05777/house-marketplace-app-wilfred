@@ -66,7 +66,8 @@ function CreateListing() {
   }
 
   const onSubmit = (e) => {
-    e.prventDefault();
+    e.preventDefault();
+    console.log(formData);
   };
   const onMutate = (e) => {
     let boolean = null;
