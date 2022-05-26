@@ -100,7 +100,7 @@ function CreateListing() {
         <p className="pageHeader">Create a Listing</p>
       </header>
       <main>
-        <form onClick={onSubmit}>
+        <form onSubmit={onSubmit}>
           <label className="formLabel">Sell / Rent</label>
           <div className="formButtons">
             <button
