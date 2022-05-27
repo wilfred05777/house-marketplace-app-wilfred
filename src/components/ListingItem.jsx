@@ -1,3 +1,5 @@
+// https://github.com/bradtraversy/house-marketplace/blob/main/src/components/ListingItem.jsx
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as DeleteIcon } from "../assets/svg/deleteIcon.svg";
@@ -12,7 +14,7 @@ function ListingItem({ listing, id, onDelete }) {
         className="categoryListingLink"
       >
         <img
-          src={listing.imageUrls[0]}
+          src={listing.imgUrls[0]}
           alt={listing.name}
           className="categoryListingImg"
         />
