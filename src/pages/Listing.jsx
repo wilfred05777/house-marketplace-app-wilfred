@@ -27,6 +27,7 @@ function Listing() {
         setLoading(false);
       }
     };
+    fetchListing();
   }, [navigate, params.listingId]);
   return <div>Listing</div>;
 }
