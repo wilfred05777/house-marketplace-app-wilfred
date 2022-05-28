@@ -9,7 +9,7 @@ import {
   where,
   orderBy,
   limit,
-  startAfter,
+  // startAfter,
 } from "firebase/firestore";
 
 import { db } from "../firebase.config";

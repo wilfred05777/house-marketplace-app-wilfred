@@ -1,16 +1,19 @@
 // https://github.com/bradtraversy/house-marketplace/blob/main/src/pages/Profile.jsx
 
-import { useState, useEffect } from "react";
+import {
+  useState,
+  // useEffect
+} from "react";
 import { getAuth, updateProfile } from "firebase/auth";
 import {
   updateDoc,
   doc,
-  collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
-  deleteDoc,
+  // collection,
+  // getDocs,
+  // query,
+  // where,
+  // orderBy,
+  // deleteDoc,
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { useNavigate, Link } from "react-router-dom";
