@@ -1,3 +1,5 @@
+//https://github.com/bradtraversy/house-marketplace/blob/main/src/App.js
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,7 +37,7 @@ function App() {
             path="/create-listing/:listingId"
             element={<CreateListing />}
           />
-          <Route path="/edit-listing" element={<EditListing />} />
+          <Route path="/edit-listing/:listingId" element={<EditListing />} />
           <Route
             path="/category/:categoryName/:listingId"
             element={<Listing />}
